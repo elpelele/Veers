@@ -51,7 +51,7 @@
     }
 
     .image-container:hover {
-        opacity:50%
+        opacity: 50%
     }
 
     p {

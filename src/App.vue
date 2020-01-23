@@ -2,7 +2,8 @@
     <div class="app" id="app">
         <div class=massive-container>
             <div class="logo">
-                <img src="./assets/logo.png" alt="logo"><h1 class="eers">EERS</h1>
+                <img src="./assets/logo.png" alt="logo">
+                <h1 class="eers">EERS</h1>
             </div>
             <input class="searchBar" type="search" v-model="field" placeholder="Recherche une bière">
             <div class="row beer-container">
@@ -53,13 +54,14 @@
         background-size: cover;
     }
 
-    .logo{
+    .logo {
         justify-content: center;
         background-color: white;
         display: flex;
         border-radius: 15px;
         padding-top: 15px;
     }
+
     .massive-container {
         margin: auto;
         width: 50%;
@@ -83,7 +85,7 @@
 
     @media screen and (max-width: 991px) {
         .eers {
-            font-size : 0
+            font-size: 0
         }
     }
 </style>
