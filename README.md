@@ -1,24 +1,5 @@
-# vuebeers
+# Veers
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Veers is a simple app i made in Vue.js to practice it.
+Basically, it's just fetching a beers API.
+You have a dynamic search bar and you can click on beer's image to get the description.
