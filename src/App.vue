@@ -1,28 +1,89 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="app" id="app">
+        <div class=massive-container>
+            <div class="logo">
+                <img src="./assets/logo.png" alt="logo"><h1 class="eers">EERS</h1>
+            </div>
+            <input class="searchBar" type="search" v-model="field" placeholder="Recherche une bière">
+            <div class="row beer-container">
+                <div v-for="beer in filteredBeers" :key="beer.id">
+                    <Beer :beer='beer'/>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+<script>
+    import Axios from "axios";
+    import Beer from "./components/Beer";
+
+    export default {
+        components: {
+            Beer
+        },
+        data: function () {
+            return {
+                beers: [],
+                field: '',
+            }
+        },
+        mounted() {
+            Axios
+                .get('https://api.punkapi.com/v2/beers')
+                .then(response => (this.beers = response.data))
+        },
+        computed: {
+            filteredBeers() {
+                return this.beers.filter((beer) => {
+                    return beer.name.includes(this.field)
+                })
+            }
+        }
+    }
+
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+<style scoped>
+
+    .app {
+        background-color: #35495E;
+        background-size: cover;
+    }
+
+    .logo{
+        justify-content: center;
+        background-color: white;
+        display: flex;
+        border-radius: 15px;
+        padding-top: 15px;
+    }
+    .massive-container {
+        margin: auto;
+        width: 50%;
+    }
+
+    .eers {
+        text-align: center;
+        font-size: 100px;
+        color: #41B882;
+    }
+
+    .searchBar {
+        height: 50px;
+        width: 100%;
+        margin: 50px 0;
+    }
+
+    .beer-container {
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 991px) {
+        .eers {
+            font-size : 0
+        }
+    }
 </style>
