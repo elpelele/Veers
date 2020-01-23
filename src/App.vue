@@ -5,7 +5,7 @@
                 <img src="./assets/logo.png" alt="logo">
                 <h1 class="eers">EERS</h1>
             </div>
-            <input class="searchBar" type="search" v-model="field" placeholder="Recherche une bière">
+            <input class="searchBar" type="search" v-model="field" placeholder="Find a beer">
             <div class="row beer-container">
                 <div v-for="beer in filteredBeers" :key="beer.id">
                     <Beer :beer='beer'/>

@@ -37,7 +37,7 @@
         display: flex;
         margin: 10px;
         justify-content: center;
-        background-color: #41B882;
+        background-color: white;
         border-radius: 5px;
         border-style: solid;
         border-color: white;
@@ -57,11 +57,12 @@
     p {
         color: white;
         text-align: center;
+        font-size: 18px;
     }
 
-    h5 {
+    .card-title {
         text-align: center;
-        font-size: 100px;
-        color: white;
+        font-weight: bold;
+        color: #41B882;
     }
 </style>
